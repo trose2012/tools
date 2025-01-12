@@ -4,27 +4,23 @@ const runtimeConfig = useRuntimeConfig();
 
 useHead({
   link: [
-    {
-      rel: "icon",
-      type: "image/svg+xml",
-      href: "/favicon.ico",
-    },
-    {
-      rel: "preconnect",
-      href: "https://data.3kh0.net",
-    },
+    { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+    { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+    { rel: "manifest", href: "/site.webmanifest" },
+    { rel: "preconnect", href: "https://data.3kh0.net" },
   ],
   script: [
-    {
-      //todo add user consent
-      src: "https://data.3kh0.net/script.js",
-      "data-website-id": "3284c22d-b7ff-41dc-a622-f2d95899ee07",
-      defer: true,
-    },
+    { src: "https://data.3kh0.net/script.js", "data-website-id": "3284c22d-b7ff-41dc-a622-f2d95899ee07", defer: true }, //todo add user consent
   ],
-  title: "Echo Net Extras", //todo add dynamic title
-  // todo add meta tags
 });
+
+useServerSeoMeta({
+  title: 'Echo Net Extras',
+  description: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.',
+  ogDescription: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.',
+  ogTitle: 'Echo Net Extras',
+})
+
 onMounted(() => {
   // timing
   const time = performance.now();
