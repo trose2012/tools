@@ -18,6 +18,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: [
+    // importing fonts
+    "~/assets/fonts/nunito.css",
+    "~/assets/fonts/lexend.css",
+  ],
 
   runtimeConfig: {
     public: {

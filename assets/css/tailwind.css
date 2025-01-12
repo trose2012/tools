@@ -66,11 +66,9 @@
 
     --ring: 240 4.9% 83.9%;
   }
-}
-
-@layer base {
   * {
     @apply border-border;
+    font-family: "Lexend", "Nunito", "Proxima Nova", system-ui, sans-serif;
   }
   body {
     @apply bg-background text-foreground;
