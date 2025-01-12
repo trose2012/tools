@@ -115,11 +115,15 @@ const _addLink = (to: string, text: string) => {
       </nav>
 
       <!--infos-->
-      <div class="text-lg font-semibold mt-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="~/assets/svg/greenheart.svg" /> by Echo</div>
+      <div class="text-lg font-semibold mt-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="~/assets/svg/greenheart.svg"> by Echo</div>
       <p class="text-sm text-muted-foreground my-2">Version prod+{{ runtimeConfig.public.sha }}</p>
 
       <!--button way down under-->
-      <Button variant="secondary" class="mt-auto w-full" @click="toggleSidebar"> Collapse Sidebar </Button>
+      <div class="flex flex-col w-full mt-auto">
+        <!--todo lets replace text with icons, could be cool-->
+        <Button class="mt-auto w-full" href="https://echonet.fillout.com/feedback" target="_blank" rel="noopener noreferrer">Submit Feedback</Button>
+        <Button variant="secondary" class="mt-2 w-full" @click="toggleSidebar"> Collapse Sidebar </Button>
+      </div>
     </header>
 
     <!--content-->
