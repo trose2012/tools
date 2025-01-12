@@ -14,13 +14,6 @@ useHead({
   ],
 });
 
-useServerSeoMeta({
-  title: 'Echo Net Extras',
-  description: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.',
-  ogDescription: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.',
-  ogTitle: 'Echo Net Extras',
-})
-
 onMounted(() => {
   // timing
   const time = performance.now();

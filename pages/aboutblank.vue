@@ -1,3 +1,17 @@
+<script setup>
+import { toast } from "vue-sonner";
+
+useHead({
+  title: 'about:blank embedder - Echo Net Extras',
+  meta: [
+    { name: 'description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
+    { property: 'og:description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
+    { property: 'og:title', content: 'Echo Net Extras' },
+  ],
+});
+
+</script>
+
 <template>
   <div class="flex-grow p-2 rounded-lg overflow-auto hide-scrollbar">
     <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">about:blank embedder</h1>
@@ -12,7 +26,7 @@
 </template>
 
 <script>
-import { toast } from "vue-sonner";
+
 // duck you eslint we keeping these varibles like this
 /* eslint-disable prefer-const */
 export default {

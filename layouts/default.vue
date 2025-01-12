@@ -75,6 +75,17 @@ const filteredLinks = computed(() => {
 const _addLink = (to: string, text: string) => {
   links.value.push({ to, text });
 };
+
+//seo
+useHead({
+  title: 'Echo Net Extras',
+  meta: [
+    { name: 'description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
+    { property: 'og:description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
+    { property: 'og:title', content: 'Echo Net Extras' },
+  ],
+});
+
 </script>
 
 <template>
