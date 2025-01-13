@@ -132,8 +132,10 @@ useHead({
       <!--button way down under-->
       <div class="flex flex-col w-full mt-auto">
         <!--todo lets replace text with icons, could be cool-->
-        <Button class="mt-auto w-full" href="https://echonet.fillout.com/feedback" target="_blank" rel="noopener noreferrer">Submit Feedback</Button>
-        <Button variant="secondary" class="mt-2 w-full" @click="toggleSidebar"> Collapse Sidebar </Button>
+        <a href="https://echonet.fillout.com/feedback" target="_blank">
+          <Button class="mt-auto w-full">Submit Feedback</Button>
+        </a>
+        <Button variant="secondary" class="mt-2 w-full" @click="toggleSidebar">Collapse Sidebar</Button>
       </div>
     </header>
 
