@@ -94,6 +94,7 @@ const cryptos = [
   { name: "Dogecoin", address: "DBhD3inJwU17gZo4FTaH7HsCBwe3iW3Fa4", image: "/svg/doge.svg" },
   { name: "Bitcoin Cash", address: "qp2l3dp5adgy375t9pgeptw0cul2nw65pys295gzun", image: "/svg/bch.svg" },
   { name: "Tron", address: "TSnh7sZQKUttsWupa7vhpp3ow1t16Z2p88", image: "/svg/trx.svg" },
+  { name: "Solana", address: "7JnnjZfcNEoc6h3dRPw8zWFQQGoiMPtpMFNyDq9usPye", image: "/img/sol.png" },
 ];
 
 const copy = (text) => {
@@ -119,6 +120,8 @@ const lookup = (name, address) => {
       return `https://blockchair.com/bitcoin-cash/address/${address}`;
     case "Tron":
       return `https://tronscan.org/#/address/${address}`;
+    case "Solana":
+      return `https://solscan.io/account/${address}`;
     // eth networks
     case "eth":
       return `https://etherscan.io/address/${address}`;
