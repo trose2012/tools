@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 const runtimeConfig = useRuntimeConfig();
 
 const searchInput = ref<{ focus: () => void } | null>(null);
@@ -78,39 +77,52 @@ const _addLink = (to: string, text: string) => {
 
 //seo
 useHead({
-  title: 'Echo Net Extras',
+  title: "Echo Net Extras",
   meta: [
-    { name: 'description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
-    { property: 'og:description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
-    { property: 'og:title', content: 'Echo Net Extras' },
+    { name: "description", content: "Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly." },
+    { property: "og:description", content: "Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly." },
+    { property: "og:title", content: "Echo Net Extras" },
   ],
 });
-
 </script>
 
 <template>
   <div class="app-layout flex h-screen w-screen flex-col lg:flex-row">
-    <div class="p-6 pb-0 lg:hidden">
-      <Alert
-        ><!--im lazy so cry about it-->
-        <AlertTitle>Where is my mobile support?!?</AlertTitle>
-        <AlertDescription> Yeah, sorry about that. It's currently broken out the whazoo and I'm working on it. It should be in a usable state within the next week. (no promises) Please use a desktop browser for now for the best experience. </AlertDescription>
-      </Alert>
-    </div>
-
-    <!-- smol screen
-    <header class="navbar flex items-center justify-between m-4 rounded-lg p-2 bg-[#09090b] border border-zinc-800 lg:hidden">
+    <!-- smol screen -->
+    <header class="navbar flex items-center justify-between m-4 mb-0 rounded-lg p-2 bg-[#09090b] border border-zinc-800 lg:hidden relative z-40">
       <h1 class="text-2xl font-semibold tracking-tight">Echo Net Extras</h1>
-      <button class="hamburger-menu" @click="toggleMobileMenu" >
-        find svg later
+      <button class="hamburger-menu" @click="toggleMobileMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="#fff" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z" /></svg>
       </button>
-    </header>-->
+    </header>
+
+    <div :class="['fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out h-screen overflow-y-auto', isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full']">
+      <div class="bg-zinc-950 border border-zinc-800 m-4 p-4 rounded-lg overflow-y-auto">
+        <div class="flex items-center justify-between mb-2">
+          <h1 class="text-2xl font-semibold tracking-tight">Echo Net Extras</h1>
+          <button class="hamburger-menu" @click="toggleMobileMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="#fff" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" /></svg>
+          </button>
+        </div>
+        <Input ref="searchInput" v-model="query" class="mb-2" placeholder="Search tools..." @focus="handleFocus" @blur="handleBlur" />
+        <nav class="flex flex-col space-y-2">
+          <NuxtLink v-for="link in filteredLinks" :key="link.to" :to="link.to" class="px-2 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700" exact-active-class="active-link" @click="toggleMobileMenu">
+            {{ link.text }}
+          </NuxtLink>
+        </nav>
+        <!-- eslint-disable-next-line vue/html-self-closing -->
+        <div class="text-lg font-semibold mt-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="~/assets/svg/greenheart.svg" /> by Echo</div>
+        <p class="text-sm text-muted-foreground my-2">Version prod+{{ runtimeConfig.public.sha }}</p>
+        <a href="https://echonet.fillout.com/feedback" target="_blank">
+          <Button class="mt-auto w-full">Submit Feedback</Button>
+        </a>
+      </div>
+    </div>
 
     <!-- BIGGGGGGGGGGGG SCREEEEEEEEEN -->
     <header :class="['sidebar flex flex-col items-center p-2 bg-[#09090b] overflow-y-auto hide-scrollbar border-r border-zinc-800 transition-all duration-500 z-10', isSidebarCollapsed ? 'collapsed' : 'expanded', 'hidden lg:flex']">
       <h1 class="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0 text-center">Echo Net Extras</h1>
 
-      <!--yap box-->
       <div class="relative w-full max-w-sm items-center">
         <Input ref="searchInput" v-model="searchQuery" class="my-2" placeholder="Search tools..." @focus="handleFocus" @blur="handleBlur" />
         <span class="absolute end-0 inset-y-0 flex items-center justify-center px-2">
@@ -118,18 +130,16 @@ useHead({
         </span>
       </div>
 
-      <!--linkies-->
       <nav class="flex flex-col space-y-2 w-full">
         <NuxtLink v-for="link in filteredLinks" :key="link.to" :to="link.to" :class="['nav-link', searchQuery && !link.text.toLowerCase().includes(searchQuery.toLowerCase()) ? 'text-muted' : '']" exact-active-class="active-link">
           {{ link.text }}
         </NuxtLink>
       </nav>
 
-      <!--infos-->
-      <div class="text-lg font-semibold mt-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="~/assets/svg/greenheart.svg"> by Echo</div>
+      <!-- eslint-disable-next-line vue/html-self-closing -->
+      <div class="text-lg font-semibold mt-2">Made with <img class="h-5 w-5 inline" alt="green heart" src="~/assets/svg/greenheart.svg" /> by Echo</div>
       <p class="text-sm text-muted-foreground my-2">Version prod+{{ runtimeConfig.public.sha }}</p>
 
-      <!--button way down under-->
       <div class="flex flex-col w-full mt-auto">
         <!--todo lets replace text with icons, could be cool-->
         <a href="https://echonet.fillout.com/feedback" target="_blank">
@@ -181,7 +191,7 @@ my guess is that since these css rules are placed over tailwind it works. idk im
 }
 
 .nav-link {
-  @apply px-2 py-1 text-center rounded transition-colors duration-300 hover:bg-zinc-800;
+  @apply px-2 py-1 text-center rounded-lg transition-colors duration-300 hover:bg-zinc-800;
   /* WHY IS THIS YELLOW UNDERLINE I HATE YELLOWS */
 }
 .nav-link:hover,

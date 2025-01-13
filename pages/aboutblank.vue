@@ -2,14 +2,13 @@
 import { toast } from "vue-sonner";
 
 useHead({
-  title: 'about:blank embedder - Echo Net Extras',
+  title: "about:blank embedder - Echo Net Extras",
   meta: [
-    { name: 'description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
-    { property: 'og:description', content: 'Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly.' },
-    { property: 'og:title', content: 'Echo Net Extras' },
+    { name: "description", content: "Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly." },
+    { property: "og:description", content: "Welcome to my extras website! This is a collection of random tools that I have created and use somewhat regularly." },
+    { property: "og:title", content: "Echo Net Extras" },
   ],
 });
-
 </script>
 
 <template>
@@ -26,7 +25,6 @@ useHead({
 </template>
 
 <script>
-
 // duck you eslint we keeping these varibles like this
 /* eslint-disable prefer-const */
 export default {

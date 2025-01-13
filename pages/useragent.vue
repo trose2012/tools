@@ -156,8 +156,9 @@ onMounted(() => {
     <Alert>
       <AlertTitle>What does this mean?</AlertTitle>
       <AlertDescription>
-        Your browser: <span class="font-semibold">{{ browser }} {{ browserVer }}</span
-        ><br>
+        Your browser: <span class="font-semibold">{{ browser }} {{ browserVer }}</span>
+        <!-- eslint-disable-next-line vue/html-self-closing -->
+        <br />
         Your operating system: <span class="font-semibold">{{ os }} {{ osver }}</span>
       </AlertDescription>
     </Alert>

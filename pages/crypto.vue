@@ -4,7 +4,8 @@
     <p class="leading-7 [&:not(:first-child)]:mt-6">Feel free to use these as ways to help donate and contribute to my work!</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
       <div v-for="crypto in cryptos" :key="crypto.name" class="bg-transparent border border-zinc-800 p-2 rounded-lg shadow-lg flex items-center">
-        <img :src="crypto.image" :alt="crypto.name" class="h-10 w-10 mr-4">
+        <!-- eslint-disable-next-line vue/html-self-closing -->
+        <img :src="crypto.image" :alt="crypto.name" class="h-10 w-10 mr-4" />
         <div class="flex flex-col flex-grow">
           <h2 class="text-md font-bold">{{ crypto.name }}</h2>
           <p class="text-xs text-zinc-500">
@@ -31,7 +32,8 @@
                     <Tooltip v-for="network in crypto.networks" :key="network">
                       <TooltipTrigger as-child>
                         <NuxtLink :href="lookup(network, crypto.address)" target="_blank">
-                          <img :src="`/svg/${network}.svg`" :alt="network" class="h-5 w-5">
+                          <!-- eslint-disable-next-line vue/html-self-closing -->
+                          <img :src="`/svg/${network}.svg`" :alt="network" class="h-5 w-5" />
                         </NuxtLink>
                       </TooltipTrigger>
                       <TooltipContent>
