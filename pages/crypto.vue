@@ -90,7 +90,7 @@ const cryptos = [
   { name: "Monero", address: "43LSJpZ6Le84eMiLTmMwZgTDMxtPthDh8Cdk1HWuLAx9itTgj8YqLbGE7hFYXSR6p6YVP8g4TMWxDiQTDnHW1VHMAb6YDrH", image: "/svg/xmr.svg" },
   { name: "Ethereum", address: "0x4a31EBD5A93334ba99CAE15dd1411c7a3E0214B6", image: "/svg/eth.svg", networks: ["eth", "base", "polygon", "op", "avax"] },
   { name: "Litecoin", address: "ltc1q4nwfd39gwgh57ylj0qlwahnfjnl3v5anrdjtex", image: "/svg/ltc.svg" },
-  { name: "Bitcoin", address: "33WimAtvLLmEREJBUS2wc8ev7tjmzCU2Mq", image: "/svg/btc.svg" },
+  { name: "Bitcoin", address: "3CsXfnKicmrkDyoFKLm9KfVUjqXJxXN77N", image: "/svg/btc.svg" },
   { name: "Dogecoin", address: "DBhD3inJwU17gZo4FTaH7HsCBwe3iW3Fa4", image: "/svg/doge.svg" },
   { name: "Bitcoin Cash", address: "qp2l3dp5adgy375t9pgeptw0cul2nw65pys295gzun", image: "/svg/bch.svg" },
   { name: "Tron", address: "TSnh7sZQKUttsWupa7vhpp3ow1t16Z2p88", image: "/svg/trx.svg" },
