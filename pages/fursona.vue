@@ -62,8 +62,8 @@ const parse = (credits) => {
 <template>
   <main class="p-4 overflow-y-auto h-full">
     <div class="max-w-6xl mx-auto">
-      <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Fursona References</h1>
-      <p class="leading-7 [&:not(:first-child)]:mt-6">Here are some references for my fursona, Echo the Fox.</p>
+      <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Fursona Reference</h1>
+      <p class="leading-7 [&:not(:first-child)]:mt-6">Here is some art and general information for my fursona, Echo the silly foxxo.</p>
       <div class="my-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="md:col-span-1 rounded-lg shadow-md overflow-hidden border border-zinc-800">
@@ -75,7 +75,7 @@ const parse = (credits) => {
                 <li><strong>Name:</strong> Echo</li>
                 <li><strong>Age:</strong> 15</li>
                 <li><strong>Body Type:</strong> Anthro</li>
-                <li><strong>Pronouns:</strong> he/him</li>
+                <li><strong>Pronouns:</strong> he/they</li>
                 <li><strong>Species:</strong> Fox</li>
                 <li><strong>Gender:</strong> Male</li>
                 <li><strong>Tails:</strong> 3-5</li>
