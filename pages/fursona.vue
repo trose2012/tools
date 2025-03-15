@@ -5,17 +5,17 @@ import { marked } from "marked";
 const artworks = [
   {
     file: "xmr_hoodie",
-    credits: "Comission from [crisspiess](https://xcancel.com/crispies_art)",
+    credits: "Commission from [crisspiess](https://xcancel.com/crispies_art)",
     blurb: "Taxes on crypto? Never head of it!",
   },
   {
     file: "olives_laptop",
-    credits: "Comission from [Olive](https://xcancel.com/olives_laptop)",
+    credits: "Commission from [Olive](https://xcancel.com/olives_laptop)",
     blurb: "I swear I am working, nothing to see here",
   },
   {
     file: "Echosketch",
-    credits: "Comission from [Sachiyako](https://www.furaffinity.net/user/sachiyako/)",
+    credits: "Commission from [Sachiyako](https://www.furaffinity.net/user/sachiyako/)",
     blurb: "I love it so much, the details are amazing, and the colors are perfect!",
   },
   {
@@ -35,7 +35,7 @@ const artworks = [
   },
   {
     file: "echo_simple",
-    credits: "Comission from [Nigata Natsumoto](https://nigatanatsumoto.carrd.co/)",
+    credits: "Commission from [Nigata Natsumoto](https://nigatanatsumoto.carrd.co/)",
     blurb: "Little do you know he is wanted from over 150 countries for war crimes.",
   },
   {
@@ -53,6 +53,16 @@ const artworks = [
     credits: "Request from [bogusborb](https://www.instagram.com/bogusborb)",
     blurb: "I love this because it's a nice simple drawing, but still has the cool foxxo :D",
   },
+  {
+    file: "echotor",
+    credits: "Commission from [Sylvium](https://toyhou.se/sylvium)",
+    blurb: "Cool little drawing commissioned for my blog post about Tor!",
+  },
+  {
+    file: "echo_cryptocurrency",
+    credits: "Commission from [Raxun](https://www.instagram.com/trashpandaraku/profilecard/)",
+    blurb: "Cool little drawing commissioned for a upcoming blog post that has yet to be released!",
+  },
 ];
 
 const parse = (credits) => {
@@ -68,7 +78,8 @@ const parse = (credits) => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="md:col-span-1 rounded-lg shadow-md overflow-hidden border border-zinc-800">
             <div class="p-0 m-0">
-              <img src="/img/art/xmr_hoodie.webp" alt="Echo the Fox" class="w-full h-auto rounded-lg" />
+              <!-- eslint-disable-next-line vue/html-self-closing -->
+              <img src="//wsrv.nl/?url=extra.3kh0.net/img/art/xmr_hoodie.png&w=371&h=371" alt="Echo the Fox" class="w-full h-auto rounded-lg" />
             </div>
             <div class="m-4">
               <ul>
@@ -121,12 +132,14 @@ const parse = (credits) => {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="artwork in artworks" :key="artwork.file" class="group rounded-lg shadow-md border border-zinc-800 overflow-hidden">
             <a :href="`/img/art/${artwork.file}.png`" target="_blank" class="block relative">
-              <img :src="`/img/art/${artwork.file}.webp`" :alt="artwork.title" class="w-full h-auto transition-transform duration-300 group-hover:scale-95 rounded-lg" />
+              <!-- eslint-disable-next-line vue/html-self-closing -->
+              <img :src="`https://wsrv.nl/?url=extra.3kh0.net/img/art/${artwork.file}.png&w=500&h=500&fit=cover`" :alt="artwork.title" class="w-full h-auto transition-transform duration-300 group-hover:scale-95 rounded-lg" />
               <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                 <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View full image</span>
               </div>
             </a>
             <div class="p-3">
+              <!-- eslint-disable-next-line vue/html-self-closing -->
               <h3 class="font-bold" v-html="parse(artwork.credits)"></h3>
               <p class="text-sm text-muted-foreground mt-1">{{ artwork.blurb }}</p>
             </div>
