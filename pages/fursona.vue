@@ -61,7 +61,7 @@ const artworks = [
   {
     file: "echo_cryptocurrency",
     credits: "Commission from [Raxun](https://www.instagram.com/trashpandaraku/profilecard/)",
-    blurb: "Cool little drawing commissioned for a upcoming blog post that has yet to be released!",
+    blurb: "Commissioned for a upcoming blog post that has yet to be released!",
   },
 ];
 
@@ -133,7 +133,7 @@ const parse = (credits) => {
           <div v-for="artwork in artworks" :key="artwork.file" class="group rounded-lg shadow-md border border-zinc-800 overflow-hidden">
             <a :href="`/img/art/${artwork.file}.png`" target="_blank" class="block relative">
               <!-- eslint-disable-next-line vue/html-self-closing -->
-              <img :src="`https://wsrv.nl/?url=extra.3kh0.net/img/art/${artwork.file}.png&w=500&h=500&fit=cover`" :alt="artwork.title" class="w-full h-auto transition-transform duration-300 group-hover:scale-95 rounded-lg" />
+              <img :src="`https://wsrv.nl/?url=extra.3kh0.net/img/art/${artwork.file}.png?bust&w=500&h=500&fit=cover&output=png`" :alt="artwork.title" class="w-full h-auto transition-transform duration-300 group-hover:scale-95 rounded-lg" />
               <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                 <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View full image</span>
               </div>
