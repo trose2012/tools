@@ -21,7 +21,7 @@ const artworks = [
   {
     file: "ella_blahaj",
     credits: "Request from [Ella](https://sleepy.engineer/)",
-    blurb: "IKEA SHARK MENTIONED!!!",
+    blurb: "IKEA SHARK MENTIONED!!! I love this piece so much it's so cute!",
   },
   {
     file: "chipflake-doodle",
@@ -41,12 +41,12 @@ const artworks = [
   {
     file: "rainbow_art",
     credits: "Request from [Thedoubletailedrainbow](https://toyhou.se/TheDoubleTailedrainB)",
-    blurb: "That's one silly fox boy",
+    blurb: "That's one silly fox boy. Thank you for this quick sketch!",
   },
   {
     file: "Palestine_support",
-    credits: "Request from [@pup.dagger](https://linktr.ee/pup.dagger) with lines by Pulex",
-    blurb: "I support human rights for Palestine. Donate US Campaign for Palestinian Rights at uscpr.org",
+    credits: "Request from [@pup.dagger](https://linktr.ee/pup.dagger)",
+    blurb: "I support human rights for Palestine, donate to Palestinian Rights at uscpr.org",
   },
   {
     file: "borbdraws",
