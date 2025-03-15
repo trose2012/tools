@@ -10,7 +10,7 @@ const artworks = [
   },
   {
     file: "olives_laptop",
-    credits: "Commission from [Olive](https://xcancel.com/olives_laptop)",
+    credits: "Commission from [olives_garden13](https://www.instagram.com/olives_garden13)",
     blurb: "I swear I am working, nothing to see here",
   },
   {
