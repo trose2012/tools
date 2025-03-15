@@ -55,7 +55,7 @@ const artworks = [
   },
   {
     file: "echotor",
-    credits: "Commission from [Sylvium](https://toyhou.se/sylvium)",
+    credits: "Commission from [Axel](https://toyhou.se/pup_bites)",
     blurb: "Cool little drawing commissioned for my blog post about Tor!",
   },
   {
@@ -97,7 +97,7 @@ const parse = (credits) => {
             <Alert class="h-full">
               <AlertTitle>About</AlertTitle>
               <AlertDescription>
-                <div>Echo is an orange fox who usually wears a sweatshirt with the occasional T-shirt. Common designs include the <a class="font-semibold text-blue-500" target="_blank" href="https://web.getmonero.org/press-kit/">Monero logo</a> and the <a class="font-semibold text-blue-500" target="_blank" href="https://efimero.github.io/xenia-images/cathodegaytube1.jpg">Xenia Linux T-shirt</a>.</div>
+                <div>Echo is an orange fox who usually wears a sweatshirt with the occasional T-shirt. Common designs include the <a class="font-semibold text-blue-500" target="_blank" href="https://web.getmonero.org/press-kit/">Monero logo</a> and the <a class="font-semibold text-blue-500" target="_blank" href="https://efimero.github.io/xenia-images/cathodegaytube1.jpg">Xenia Linux T-shirt</a>. His design is quite basic but leaves room for artists to make their own interpretation of how he should look.</div>
               </AlertDescription>
               <AlertTitle class="my-2">A few notes</AlertTitle>
               <AlertDescription
