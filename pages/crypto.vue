@@ -96,6 +96,7 @@ const cryptos = [
   { name: "Tron", address: "TSnh7sZQKUttsWupa7vhpp3ow1t16Z2p88", image: "/svg/trx.svg" },
   { name: "Solana", address: "7JnnjZfcNEoc6h3dRPw8zWFQQGoiMPtpMFNyDq9usPye", image: "/img/sol.png" },
   { name: "Zcash", address: "t1Z5ZeB5YKxUcd7xY5rhUMMqmWsZhURWCK9", image: "/svg/zec.svg" },
+  { name: "Ton", address: "UQDGhAIJhSzvRsS2p4J_4FzpEgBqUMiWGFUH7Dc--mNrtZ8W", image: "/svg/ton.svg" },
 ];
 
 const copy = (text) => {
@@ -125,6 +126,8 @@ const lookup = (name, address) => {
       return `https://solscan.io/account/${address}`;
     case "Zcash":
       return `https://mainnet.zcashexplorer.app/address/${address}`;
+    case "Ton":
+      return `https://tonscan.org/address/${address}`;
     // eth networks
     case "eth":
       return `https://etherscan.io/address/${address}`;
