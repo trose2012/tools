@@ -84,7 +84,7 @@ const parse = (credits) => {
             <div class="m-4">
               <ul>
                 <li><strong>Name:</strong> Echo</li>
-                <li><strong>Age:</strong> 15</li>
+                <li><strong>Age:</strong> 16</li>
                 <li><strong>Body Type:</strong> Anthro</li>
                 <li><strong>Pronouns:</strong> he/they</li>
                 <li><strong>Species:</strong> Fox</li>
