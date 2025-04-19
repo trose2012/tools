@@ -78,13 +78,6 @@ onMounted(async () => {
         <li>Browser Language: {{ info.browserLanguage }}</li>
         <li>CPU Threads: {{ info.cpuThreads }}</li>
       </ul>
-      <p class="leading-7 [&:not(:first-child)]:mt-6">
-        Data provided by <a href="https://wtfismyip.com/" class="underline text-blue-500" target="_blank">wtfismyip</a>.
-        <span
-          >Use a VPN to protect your privacy online. I recommend <a href="https://mullvad.net/en/vpn" class="underline text-blue-500" target="_blank">Mullvad VPN</a>, it is secure, private, and you don't even use a email to sign up. Pay a flat rate of 5€ per month.
-          <!--#ad--></span
-        >
-      </p>
     </div>
   </div>
 </template>
